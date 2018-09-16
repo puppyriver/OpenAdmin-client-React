@@ -64,7 +64,7 @@ class SidebarRightComponent extends Component {
 
               <TabPane tabId="notes">
                 <div className="p-4">
-                  <h5 className="tab-title">{this.state.messages.length} Notes Received</h5>
+                  <h5 className="tab-title">{this.state.messages ? this.state.messages.length : -1} Notes Received</h5>
                   <p className="mb-0">
                     Lorem ipsum dolor sit amet
                   </p>

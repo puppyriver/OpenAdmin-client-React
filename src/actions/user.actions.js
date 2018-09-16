@@ -16,6 +16,7 @@ function login(email, password) {
     userService.login(email, password)
       .then(
         user => {
+
           dispatch(success(user));
           history.push(`${process.env.PUBLIC_URL}/`);
         },

@@ -22,11 +22,16 @@ function login(email, password) {
 
       return response.json();
     })
-    .then(data => {
+    .then(t => {
+      let data = t.data;
+      console.log("login successsss",data);
+      if (data && data.token && !data.access_token)
+        data.access_token = data.token;
       // login successful if there's a jwt token in the response
       if (data && data.access_token) {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('auth_user', JSON.stringify(data));
+        console.log("setItem",localStorage);
       }
 
       return data;
